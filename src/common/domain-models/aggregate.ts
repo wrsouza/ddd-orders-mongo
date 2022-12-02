@@ -2,12 +2,15 @@ import { AggregateRoot } from '@nestjs/cqrs';
 import { IEntity } from './entity';
 import { Identity } from './identity';
 
-export abstract class Aggregate extends AggregateRoot implements IEntity {
-  protected _id: Identity;
+export abstract class Aggregate<DomainId extends Identity>
+  extends AggregateRoot
+  implements IEntity<DomainId>
+{
+  protected _id: DomainId;
   protected _createdAt: Date;
   protected _updatedAt: Date;
 
-  public get id(): Identity {
+  public get id(): DomainId {
     return this._id;
   }
 

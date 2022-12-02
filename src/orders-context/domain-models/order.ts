@@ -22,7 +22,7 @@ export interface IOrderValues {
   items: OrderItem[];
 }
 
-export class Order extends Aggregate {
+export class Order extends Aggregate<OrderId> {
   private _subtotal: number;
   private _shipmentType: ShipmentTypeEnum;
   private _shipmentValue: number;

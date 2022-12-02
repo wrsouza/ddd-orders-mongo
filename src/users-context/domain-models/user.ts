@@ -12,7 +12,7 @@ export interface IUserValues {
   updatedAt?: Date;
 }
 
-export class User extends Entity {
+export class User extends Entity<UserId> {
   private _name: string;
   private _email: string;
   private _password: string;

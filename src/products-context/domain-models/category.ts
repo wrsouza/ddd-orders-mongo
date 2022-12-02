@@ -10,7 +10,7 @@ export interface ICategoryValues {
   updatedAt?: Date;
 }
 
-export class Category extends Entity {
+export class Category extends Entity<CategoryId> {
   private _name: string;
   private _slug: string;
 

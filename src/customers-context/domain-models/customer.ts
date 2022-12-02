@@ -12,7 +12,7 @@ export interface ICustomerValues {
   address: Address;
 }
 
-export class Customer extends Aggregate {
+export class Customer extends Aggregate<CustomerId> {
   private _name: string;
   private _documentNumber: string;
   private _address: Address;

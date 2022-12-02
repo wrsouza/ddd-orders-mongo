@@ -14,7 +14,7 @@ export interface IOrderItemValues {
   productId?: string;
 }
 
-export class OrderItem extends Entity {
+export class OrderItem extends Entity<OrderItemId> {
   private _name: string;
   private _sku: string;
   private _quantity: number;

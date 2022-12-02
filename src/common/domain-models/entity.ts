@@ -1,17 +1,19 @@
 import { Identity } from './identity';
 
-export interface IEntity {
-  get id(): Identity;
+export interface IEntity<DomainId extends Identity> {
+  get id(): DomainId;
   get createdAt(): Date;
   get updatedAt(): Date;
 }
 
-export abstract class Entity implements IEntity {
-  protected _id: Identity;
+export abstract class Entity<DomainId extends Identity>
+  implements IEntity<DomainId>
+{
+  protected _id: DomainId;
   protected _createdAt: Date;
   protected _updatedAt: Date;
 
-  public get id(): Identity {
+  public get id(): DomainId {
     return this._id;
   }
 

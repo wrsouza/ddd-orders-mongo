@@ -1,4 +1,4 @@
-import { Entity } from '../../common/domain-models';
+import { Aggregate, Entity } from '../../common/domain-models';
 import { Category } from './category';
 import { ProductId } from './product-id';
 import { Product as ProductMongo } from '../../data/database/schemas/product.schema';
@@ -15,7 +15,7 @@ export interface IProductValues {
   categories?: Category[];
 }
 
-export class Product extends Entity {
+export class Product extends Aggregate<ProductId> {
   private _name: string;
   private _sku: string;
   private _slug: string;
