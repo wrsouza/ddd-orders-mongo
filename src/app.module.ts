@@ -1,8 +1,10 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import * as Joi from 'joi';
+import { AppController } from './api/app.controller';
 import { CustomersModule } from './customers-context/customers.module';
 import { DatabaseModule } from './data/database/database.module';
+import { OrdersModule } from './orders-context/orders.module';
 import { ProductsModule } from './products-context/products.module';
 import { UsersModule } from './users-context/users.module';
 
@@ -20,8 +22,9 @@ import { UsersModule } from './users-context/users.module';
     UsersModule,
     CustomersModule,
     ProductsModule,
+    OrdersModule,
   ],
-  controllers: [],
+  controllers: [AppController],
   providers: [],
 })
 export class AppModule {}

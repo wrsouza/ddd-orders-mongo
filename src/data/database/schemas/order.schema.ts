@@ -72,7 +72,7 @@ export class Order extends IdentifiableSchema {
   @Prop({ default: 0 })
   subtotal: number;
 
-  @Prop({ type: ShipmentTypeEnum })
+  @Prop()
   shipmentType: ShipmentTypeEnum;
 
   @Prop({ default: 0 })
@@ -91,7 +91,7 @@ export class Order extends IdentifiableSchema {
   updatedAt?: Date;
 
   @Prop({
-    type: [OrderItem],
+    type: Array<OrderItem>,
   })
   items: OrderItem[];
 
